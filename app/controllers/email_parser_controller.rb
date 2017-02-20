@@ -10,6 +10,7 @@ class EmailParserController < ApplicationController
   begin
     # Example Customer Create
     @customer = Vhx::Customer.all()
+    
     respond_to do |format|
       format.json render :partial => "email_parser/show.json"
     end
