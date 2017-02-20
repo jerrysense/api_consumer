@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   require 'rest_client'
 
   USERNAME = "myfinance" # needed to access the APi
@@ -17,7 +16,6 @@ class UsersController < ApplicationController
 
   end
 
-  #NOTE :  see below how we are passing the payload and content type while making the post call
   def create
     uri = "#{API_BASE_URL}/users"
     payload = params.to_json # converting the params to json
@@ -65,4 +63,3 @@ class UsersController < ApplicationController
     redirect_to users_path
    end
  end
-end

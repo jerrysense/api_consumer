@@ -3,21 +3,23 @@ class EmailParserController < ApplicationController
   require 'vhx'
   require 'json'
 
-  def show
+  def index
 
   vhx = Vhx.setup({ api_key: '3AxuWn9dEUuJcPVXsySKAr6HPm_uNVGR' })
 
   begin
     # Example Customer Create
     @customer = Vhx::Customer.all()
-    
-    respond_to do |format|
-      format.json render :partial => "email_parser/show.json"
-    end
+
   rescue Vhx::VhxError
 
   end
 
   end
 
+  def show
+    respond_to do |format|
+      format.json render :partial => "email_parser/show.json"
+    end
+  end
 end
